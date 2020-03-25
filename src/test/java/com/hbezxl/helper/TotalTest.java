@@ -43,6 +43,15 @@ public class TotalTest {
 
     @Test
     public void HttpTest() {
+
+        HttpHelper.Get("http://localhost:8080/UserController/AddUser?id=521&name=33&pwd=额",null);
+
+        HashMap<String,String> reqestMap = new HashMap<>();
+        reqestMap.put("id","524");
+        reqestMap.put("name","33");
+        reqestMap.put("pwd","额");
+        HttpHelper.Get("http://localhost:8080/UserController/AddUser",reqestMap);
+
         HttpHelper.DownloadFileFromUrl("https://www.baidu.com/img/bd_logo1.png", "C:\\Users\\xl\\Desktop\\bd_logo1.png");
         String testa = HttpHelper.Get("http://localhost:8082/HelloController/hello");
         String testb = HttpHelper.Get("http://localhost:8082/RestController/hello");
